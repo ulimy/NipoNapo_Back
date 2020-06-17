@@ -1,10 +1,13 @@
 package niponapo.server.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,6 +43,11 @@ public class SwapController {
 			System.out.println(e);
 			return null;
 		}
+	}
+	
+	@RequestMapping(value = "/cancle", method = RequestMethod.PUT)
+	public @ResponseBody SuccessDTO cancle(@RequestBody Map<String, Object> input) throws Exception {
+		return service.swap_cancle((Integer)input.get("post_pid"));
 	}
 	
 

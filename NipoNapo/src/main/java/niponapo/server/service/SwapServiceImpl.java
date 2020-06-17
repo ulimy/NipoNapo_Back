@@ -30,9 +30,13 @@ public class SwapServiceImpl implements SwapService {
 	}
 
 	@Override
-	public SuccessDTO swap_cancle() {
-		// TODO Auto-generated method stub
-		return null;
+	public SuccessDTO swap_cancle(int post_pid) {
+		try{
+			dao.swap_cancle(post_pid);
+			return success;
+		}catch (Exception e) {
+			return fail;
+		}
 	}
 
 	@Override

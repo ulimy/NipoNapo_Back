@@ -19,8 +19,9 @@ public class SwapDAOImpl implements SwapDAO {
 	}
 
 	@Override
-	public void swap_cancle() {
-		// TODO Auto-generated method stub
+	public void swap_cancle(int post_pid) {
+		mapper.swap_cancle(post_pid);
+		return;
 
 	}
 

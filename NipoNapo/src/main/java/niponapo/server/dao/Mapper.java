@@ -10,4 +10,6 @@ public interface Mapper {
 	public void post_delete(int post_pid);
 	
 	public void swap_request(UserPostDTO input);
+	
+	public void swap_cancle(int post_pid);
 }
