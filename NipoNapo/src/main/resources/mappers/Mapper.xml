@@ -5,6 +5,8 @@
 
 <mapper namespace="niponapo.server.dao.Mapper">
 
-	<select id="test" resultType="String">
-	</select>
+	<insert id="post_create" parameterType="niponapo.server.vo.PostVO">
+		insert into post (user_pid,id,album_pid,have,want,how,photo,state,date)
+		values (#{user_pid},#{id},#{album_pid},#{have},#{want},#{how},#{photo},#{state},#{date})
+	</insert>
 </mapper>

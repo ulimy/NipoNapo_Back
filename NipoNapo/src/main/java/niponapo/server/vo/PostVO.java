@@ -15,6 +15,12 @@ public class PostVO {
 	private int state;
 	private Date date;
 
+	public void setInit(int user_pid) {
+		this.user_pid = user_pid;
+		this.state = 1;
+		this.date = new Date();
+	}
+
 	public int getPost_pid() {
 		return post_pid;
 	}
