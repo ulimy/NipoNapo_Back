@@ -3,6 +3,15 @@ package niponapo.server.dto;
 public class UserPostDTO {
 	private int user_pid;
 	private int post_pid;
+	
+	public UserPostDTO(){
+		super();
+	}
+	
+	public UserPostDTO(int user_pid,int post_pid){
+		this.user_pid = user_pid;
+		this.post_pid = post_pid;
+	}
 
 	public int getUser_pid() {
 		return user_pid;
