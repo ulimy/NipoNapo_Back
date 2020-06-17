@@ -12,4 +12,6 @@ public interface Mapper {
 	public void swap_request(UserPostDTO input);
 	
 	public void swap_cancle(int post_pid);
+	
+	public void swap_accept(int post_pid);
 }

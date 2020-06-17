@@ -10,7 +10,7 @@ public interface SwapService {
 	
 	public SuccessDTO swap_cancle(int post_pid);
 	
-	public SuccessDTO swap_accept();
+	public SuccessDTO swap_accept(int post_pid);
 	
 	public PostInfoDTO[] swap_list();
 	

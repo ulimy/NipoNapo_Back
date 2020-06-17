@@ -26,9 +26,9 @@ public class SwapDAOImpl implements SwapDAO {
 	}
 
 	@Override
-	public void swap_accept() {
-		// TODO Auto-generated method stub
-
+	public void swap_accept(int post_pid) {
+		mapper.swap_accept(post_pid);
+		return;
 	}
 
 	@Override

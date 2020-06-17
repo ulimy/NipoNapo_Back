@@ -9,7 +9,7 @@ public interface SwapDAO {
 	
 	public void swap_cancle(int post_pid);
 	
-	public void swap_accept();
+	public void swap_accept(int post_pid);
 	
 	public PostInfoDTO[] swap_list();
 	

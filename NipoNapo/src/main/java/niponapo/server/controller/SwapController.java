@@ -50,5 +50,10 @@ public class SwapController {
 		return service.swap_cancle((Integer)input.get("post_pid"));
 	}
 	
+	@RequestMapping(value = "/accept", method = RequestMethod.PUT)
+	public @ResponseBody SuccessDTO accept(@RequestBody Map<String, Object> input) throws Exception {
+		return service.swap_accept((Integer)input.get("post_pid"));
+	}
+	
 
 }

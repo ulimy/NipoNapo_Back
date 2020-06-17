@@ -22,4 +22,8 @@
 		update post set accept_pid=null, state=1 where post_pid=#{post_pid}
 	</update>
 	
+	<update id="swap_accept" parameterType="int">
+		update post set state=4 where post_pid=#{post_pid}
+	</update>
+	
 </mapper>
