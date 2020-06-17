@@ -28,6 +28,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<beans:bean id="interceptorForExam" class="niponapo.server.interceptor.JWTInterceptor">
+	</beans:bean>
+	<interceptors>
+		<interceptor>
+			<mapping path="/verify" />
+			<beans:ref bean="interceptorForExam" />
+		</interceptor>
+	</interceptors>
+	
 	<context:component-scan base-package="niponapo.server" />
 	
 </beans:beans>
