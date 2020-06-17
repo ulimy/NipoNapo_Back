@@ -7,6 +7,6 @@ public interface PostService {
 	
 	public SuccessDTO post_create(PostVO input);
 	
-	public SuccessDTO post_delete();
+	public SuccessDTO post_delete(int post_pid);
 	
 }

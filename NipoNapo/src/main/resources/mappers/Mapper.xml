@@ -9,4 +9,9 @@
 		insert into post (user_pid,id,album_pid,have,want,how,photo,state,date)
 		values (#{user_pid},#{id},#{album_pid},#{have},#{want},#{how},#{photo},#{state},#{date})
 	</insert>
+	
+	<delete id="post_delete" parameterType="int">
+		delete from post where post_pid = #{post_pid}
+	</delete>
+	
 </mapper>

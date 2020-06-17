@@ -18,8 +18,9 @@ public class PostDAOImpl implements PostDAO {
 	}
 
 	@Override
-	public void post_delete() {
-		// TODO Auto-generated method stub
+	public void post_delete(int post_pid) {
+		mapper.post_delete(post_pid);
+		return;
 
 	}
 
