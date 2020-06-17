@@ -32,9 +32,8 @@ public class SwapDAOImpl implements SwapDAO {
 	}
 
 	@Override
-	public PostInfoDTO[] swap_list() {
-		// TODO Auto-generated method stub
-		return null;
+	public PostInfoDTO[] swap_list(int user_pid) {
+		return mapper.swap_list(user_pid);
 	}
 
 }

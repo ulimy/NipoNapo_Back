@@ -50,9 +50,12 @@ public class SwapServiceImpl implements SwapService {
 	}
 
 	@Override
-	public PostInfoDTO[] swap_list() {
-		// TODO Auto-generated method stub
-		return null;
+	public PostInfoDTO[] swap_list(int user_pid) {
+		try{
+			return dao.swap_list(user_pid);
+		}catch (Exception e) {
+			return null;
+		}
 	}
 
 }

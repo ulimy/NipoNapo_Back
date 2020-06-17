@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import niponapo.server.dto.PostInfoDTO;
 import niponapo.server.dto.SuccessDTO;
 import niponapo.server.dto.UserPostDTO;
 import niponapo.server.service.JWTService;
@@ -55,5 +56,20 @@ public class SwapController {
 		return service.swap_accept((Integer)input.get("post_pid"));
 	}
 	
-
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public @ResponseBody PostInfoDTO[] list(HttpServletRequest request) throws Exception {
+		final String token = request.getHeader("Authorization");
+		try {
+			if (token != null && JWTService.isUsable(token)) {
+				return service.swap_list(JWTService.getUser_pid(token));
+			} else {
+				return null;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
+	
+	
 }
