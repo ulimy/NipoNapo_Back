@@ -31,4 +31,14 @@
 		from post
 		where user_pid=#{user_pid} or accept_pid=#{user_pid}
 	</select>
+	
+	<select id="main_search" parameterType="niponapo.server.dto.SearchDTO" resultType="niponapo.server.dto.PostInfoDTO">
+		select post_pid,id,how,date,state,photo
+		from post
+		where state=1 and album_pid=#{input.album_pid} and have=#{input.have} and want=#{input.want} and (
+		<foreach collection="input.how" item="item" separator="or">
+			how like "%${item}%"
+		</foreach>
+		)
+	</select>
 </mapper>

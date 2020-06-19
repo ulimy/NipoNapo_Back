@@ -33,7 +33,9 @@
 	<interceptors>
 		<interceptor>
 			<mapping path="/verify" />
-			<mapping path="post" />
+			<mapping path="/post/*" />
+			<mapping path="/swap/*" />
+			<mapping path="/main/*" />
 			<beans:ref bean="interceptorForExam" />
 		</interceptor>
 	</interceptors>
