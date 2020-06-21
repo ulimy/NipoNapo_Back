@@ -6,7 +6,7 @@ import niponapo.server.dto.SearchDTO;
 
 public interface MainService {
 	
-	public MainDTO main_init(SearchDTO input); 
+	public MainDTO main_init(int idol_pid,String how); 
 	
 	public PostInfoDTO[] main_search(SearchDTO input);
 

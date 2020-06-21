@@ -11,6 +11,8 @@ public interface MainDAO {
 	
 	public CardInfoDTO[] card_info(int album_pid);
 	
-	public PostInfoDTO[] post_info(SearchDTO input);
+	public PostInfoDTO[] post_info(int album_pid,String[] how);
+	
+	public PostInfoDTO[] post_search(SearchDTO input);
 	
 }

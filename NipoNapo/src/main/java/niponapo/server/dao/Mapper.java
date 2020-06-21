@@ -2,6 +2,8 @@ package niponapo.server.dao;
 
 import org.apache.ibatis.annotations.Param;
 
+import niponapo.server.dto.AlbumInfoDTO;
+import niponapo.server.dto.CardInfoDTO;
 import niponapo.server.dto.PostInfoDTO;
 import niponapo.server.dto.SearchDTO;
 import niponapo.server.dto.UserPostDTO;
@@ -21,6 +23,12 @@ public interface Mapper {
 	
 	public PostInfoDTO[] swap_list(int user_pid);
 	
-	public PostInfoDTO[] main_search(@Param("input") SearchDTO input);
+	public AlbumInfoDTO[] album_info(int idol_pid);
+	
+	public CardInfoDTO[] card_info(int album_pid);
+	
+	public PostInfoDTO[] post_info(@Param("album_pid") int album_pid, @Param("how") String[] how);
+	
+	public PostInfoDTO[] post_search(@Param("input") SearchDTO input);
 	
 }

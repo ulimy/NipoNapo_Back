@@ -32,7 +32,25 @@
 		where user_pid=#{user_pid} or accept_pid=#{user_pid}
 	</select>
 	
-	<select id="main_search" parameterType="niponapo.server.dto.SearchDTO" resultType="niponapo.server.dto.PostInfoDTO">
+	<select id="album_info" parameterType="int" resultType="niponapo.server.dto.AlbumInfoDTO">
+		select album_pid, album_name from album where idol_pid=#{idol_pid}
+	</select>
+	
+	<select id="card_info" parameterType="int" resultType="niponapo.server.dto.CardInfoDTO">
+		select card_pid, card_name from card where album_pid=#{album_pid}
+	</select>
+	
+	<select id="post_info" parameterType="map" resultType="niponapo.server.dto.PostInfoDTO">
+		select post_pid,id,how,date,state,photo
+		from post 
+		where album_pid=#{album_pid} and state=1 and (
+		<foreach collection="how" item="item" separator="or">
+			how like "%${item}%"
+		</foreach>
+		)
+	</select>
+	
+	<select id="post_search" parameterType="niponapo.server.dto.SearchDTO" resultType="niponapo.server.dto.PostInfoDTO">
 		select post_pid,id,how,date,state,photo
 		from post
 		where state=1 and album_pid=#{input.album_pid} and have=#{input.have} and want=#{input.want} and (

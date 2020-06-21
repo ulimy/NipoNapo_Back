@@ -5,6 +5,14 @@ import java.util.Arrays;
 public class MainInfoDTO {
 	private AlbumInfoDTO AlbumInfo;
 	private CardInfoDTO[] CardInfo;
+	
+	public MainInfoDTO(){
+		super();
+	}
+	
+	public MainInfoDTO(AlbumInfoDTO albumInfo){
+		AlbumInfo = albumInfo;
+	}
 
 	public AlbumInfoDTO getAlbumInfo() {
 		return AlbumInfo;

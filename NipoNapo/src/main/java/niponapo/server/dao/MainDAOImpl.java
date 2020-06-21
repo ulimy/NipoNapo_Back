@@ -16,19 +16,22 @@ public class MainDAOImpl implements MainDAO {
 
 	@Override
 	public AlbumInfoDTO[] album_info(int idol_pid) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.album_info(idol_pid);
 	}
 
 	@Override
 	public CardInfoDTO[] card_info(int album_pid) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.card_info(album_pid);
+	}
+	
+	@Override
+	public PostInfoDTO[] post_info(int album_pid,String[] how) {
+		return mapper.post_info(album_pid,how);
 	}
 
 	@Override
-	public PostInfoDTO[] post_info(SearchDTO input) {
-		return mapper.main_search(input);
+	public PostInfoDTO[] post_search(SearchDTO input) {
+		return mapper.post_search(input);
 	}
 
 }
