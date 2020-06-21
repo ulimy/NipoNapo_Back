@@ -23,7 +23,7 @@ public class MainController {
 	private MainService service;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public @ResponseBody MainDTO main(@RequestParam int idol_pid,@RequestParam String how){
+	public @ResponseBody MainDTO init(@RequestParam int idol_pid,@RequestParam String how){
 		return service.main_init(idol_pid, how);
 	}
 
