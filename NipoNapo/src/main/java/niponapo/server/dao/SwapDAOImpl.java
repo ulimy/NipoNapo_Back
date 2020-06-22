@@ -32,8 +32,8 @@ public class SwapDAOImpl implements SwapDAO {
 	}
 
 	@Override
-	public PostInfoDTO[] swap_list(int user_pid) {
-		return mapper.swap_list(user_pid);
+	public PostInfoDTO[] swap_list(int user_pid,int state) {
+		return mapper.swap_list(user_pid,state);
 	}
 
 }

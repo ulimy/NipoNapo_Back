@@ -26,10 +26,13 @@
 		update post set state=4 where post_pid=#{post_pid}
 	</update>
 	
-	<select id="swap_list" parameterType="int" resultType="niponapo.server.dto.PostInfoDTO">
+	<select id="swap_list" resultType="niponapo.server.dto.PostInfoDTO">
 		select post_pid,id,how,date,state,photo
 		from post
-		where user_pid=#{user_pid} or accept_pid=#{user_pid}
+		where (user_pid=#{user_pid} or accept_pid=#{user_pid}) 
+		<if test="state!=0" >
+			and state=#{state}
+		</if>
 	</select>
 	
 	<select id="album_info" parameterType="int" resultType="niponapo.server.dto.AlbumInfoDTO">

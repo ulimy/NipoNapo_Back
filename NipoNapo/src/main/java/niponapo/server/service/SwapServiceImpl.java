@@ -50,10 +50,11 @@ public class SwapServiceImpl implements SwapService {
 	}
 
 	@Override
-	public PostInfoDTO[] swap_list(int user_pid) {
+	public PostInfoDTO[] swap_list(int user_pid,int state) {
 		try{
-			return dao.swap_list(user_pid);
+			return dao.swap_list(user_pid,state);
 		}catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		}
 	}

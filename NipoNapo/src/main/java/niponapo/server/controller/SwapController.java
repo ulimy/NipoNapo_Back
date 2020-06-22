@@ -56,11 +56,11 @@ public class SwapController {
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public @ResponseBody PostInfoDTO[] list(HttpServletRequest request) throws Exception {
+	public @ResponseBody PostInfoDTO[] list(HttpServletRequest request,@RequestParam int state) throws Exception {
 		final String token = request.getHeader("Authorization");
 		try {
 			if (token != null && JWTService.isUsable(token)) {
-				return service.swap_list(JWTService.getUser_pid(token));
+				return service.swap_list(JWTService.getUser_pid(token),state);
 			} else {
 				return null;
 			}

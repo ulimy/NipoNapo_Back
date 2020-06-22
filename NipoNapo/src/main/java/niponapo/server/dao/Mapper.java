@@ -21,7 +21,7 @@ public interface Mapper {
 	
 	public void swap_accept(int post_pid);
 	
-	public PostInfoDTO[] swap_list(int user_pid);
+	public PostInfoDTO[] swap_list(@Param("user_pid")int user_pid, @Param("state")int state);
 	
 	public AlbumInfoDTO[] album_info(int idol_pid);
 	

@@ -12,6 +12,6 @@ public interface SwapService {
 	
 	public SuccessDTO swap_accept(int post_pid);
 	
-	public PostInfoDTO[] swap_list(int user_pid);
+	public PostInfoDTO[] swap_list(int user_pid,int state);
 	
 }
