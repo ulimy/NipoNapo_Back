@@ -54,7 +54,6 @@ public class SwapServiceImpl implements SwapService {
 		try{
 			return dao.swap_list(user_pid,state);
 		}catch (Exception e) {
-			e.printStackTrace();
 			return null;
 		}
 	}

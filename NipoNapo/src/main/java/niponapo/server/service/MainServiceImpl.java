@@ -32,7 +32,6 @@ public class MainServiceImpl implements MainService {
 			}
 			return output;
 		} catch (Exception e) {
-			e.printStackTrace();
 			return null;
 		}	
 	}
