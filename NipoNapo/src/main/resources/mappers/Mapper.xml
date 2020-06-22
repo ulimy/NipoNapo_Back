@@ -23,7 +23,7 @@
 	</update>
 	
 	<update id="swap_accept" parameterType="int">
-		update post set state=4 where post_pid=#{post_pid}
+		update post set state=3 where post_pid=#{post_pid}
 	</update>
 	
 	<select id="swap_list" resultType="niponapo.server.dto.PostInfoDTO">
