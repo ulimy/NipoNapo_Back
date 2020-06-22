@@ -46,10 +46,8 @@ public class PostController {
 	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-	public @ResponseBody SuccessDTO delete(@RequestBody Map<String, Object> post_pid){
-		
-		 return service.post_delete((Integer)post_pid.get("post_pid"));
-		 
+	public @ResponseBody SuccessDTO delete(@RequestBody Map<String, Object> post_pid) throws Exception{
+		 return service.post_delete((Integer)post_pid.get("post_pid")); 
 	}
 	
 }

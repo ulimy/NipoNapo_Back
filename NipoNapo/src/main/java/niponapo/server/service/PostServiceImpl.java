@@ -35,7 +35,6 @@ public class PostServiceImpl implements PostService {
 			dao.post_delete(post_pid);
 			return success;
 		} catch (Exception e) {
-			System.out.println(e);
 			return fail;
 		}
 

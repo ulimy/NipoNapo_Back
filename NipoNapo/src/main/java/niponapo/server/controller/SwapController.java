@@ -41,7 +41,6 @@ public class SwapController {
 				return null;
 			}
 		} catch (Exception e) {
-			System.out.println(e);
 			return null;
 		}
 	}
@@ -66,7 +65,6 @@ public class SwapController {
 				return null;
 			}
 		} catch (Exception e) {
-			System.out.println(e);
 			return null;
 		}
 	}
