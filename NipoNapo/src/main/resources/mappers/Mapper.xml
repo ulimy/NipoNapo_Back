@@ -48,7 +48,7 @@
 		from post 
 		where album_pid=#{album_pid} and state=1 and (
 		<foreach collection="how" item="item" separator="or">
-			how like "%${item}%"
+			(how like "%${item}%")
 		</foreach>
 		)
 	</select>
@@ -61,5 +61,6 @@
 			how like "%${item}%"
 		</foreach>
 		)
+		order by post_pid desc
 	</select>
 </mapper>

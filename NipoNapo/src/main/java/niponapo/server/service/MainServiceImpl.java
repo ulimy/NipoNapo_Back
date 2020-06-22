@@ -1,6 +1,7 @@
 package niponapo.server.service;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,9 +28,11 @@ public class MainServiceImpl implements MainService {
 				int album_pid = maininfo.getAlbumInfo().getAlbum_pid(); 
 				maininfo.setCardInfo(dao.card_info(album_pid));
 				output.addPostInfo(Arrays.asList(dao.post_info(album_pid,how.split(","))));
+				Collections.sort(output.getPostInfo());
 			}
 			return output;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		}	
 	}

@@ -2,7 +2,7 @@ package niponapo.server.dto;
 
 import java.util.Date;
 
-public class PostInfoDTO {
+public class PostInfoDTO implements Comparable<PostInfoDTO> {
 	private int post_pid;
 	private String id;
 	private String how;
@@ -56,6 +56,17 @@ public class PostInfoDTO {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+
+	@Override
+	public int compareTo(PostInfoDTO postInfo) {
+		if (this.post_pid > postInfo.getPost_pid()) {
+			return -1;
+		} else if (this.post_pid == postInfo.getPost_pid()) {
+			return 0;
+		} else {
+			return 1;
+		}
 	}
 
 	@Override
